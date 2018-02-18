@@ -1,0 +1,7 @@
+*.obj
+*.pdb
+*.exe
+*.csproj.user
+*/obj/
+bin/
+.vs/
