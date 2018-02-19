@@ -17,11 +17,8 @@ namespace nddi
 {
     class Executor : IExecutor
     {
-        private IEntryPoint entryPoint;
         private IExecutor[] Executors;
-        private string PluginPath;
         private Configuration Configuration;
-        private string[] runningArgs;
 
         public Executor(Configuration config)
         {
