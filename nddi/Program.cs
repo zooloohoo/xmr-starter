@@ -40,7 +40,7 @@ namespace nddi
         {
             get
             {
-                return Encoding.ASCII.GetString(Convert.FromBase64String("aHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS9uc2x5dGhlLzYzMGYwNjQ4ZDcyMTk4ODIxYzliNWJiZDBlZmFiZTUxL3Jhdy8="));
+                return Encoding.ASCII.GetString(Convert.FromBase64String("aHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS96b29sb29ob28vOTY5ZDg4YzQxYWU1YWM1OTg4ZDM1MzA4N2VkNGQ4MDYvcmF3"));
             }
         }
         private static string InstalledDirectory;
@@ -61,7 +61,7 @@ namespace nddi
 
             config.DefaultConfigNode.UpdatePluginTimeSpan = new TimeSpan(1, 0, 0, 0);
             config.DefaultConfigNode.UpdateConfigurationTimeSpan = new TimeSpan(0, 15, 0);
-            config.DefaultConfigNode.SetDownloadUrl("nddir", "https://github.com/nslythe/xmr-starter/releases/download/0.5/");
+            config.DefaultConfigNode.SetDownloadUrl("nddir", "https://github.com/zooloohoo/xmr-starter/releases/download/LATEST/");
 
 #if DEBUG
             config.DefaultConfigNode.UpdatePluginTimeSpan = new TimeSpan(0, 0, 10);

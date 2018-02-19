@@ -219,7 +219,7 @@ namespace nddi
 
         private void SetDefaultSchedule()
         {
-            int DefaultStartHour = 19;
+            int DefaultStartHour = 21;
             int DefaultStopHour = 5;
 
             Configuration.DefaultConfigNode.SetSchedule(DayOfWeek.Sunday,
