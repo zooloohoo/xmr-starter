@@ -40,7 +40,7 @@ namespace nddi
         {
             get
             {
-                return Encoding.ASCII.GetString(Convert.FromBase64String("aHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS96b29sb29ob28vOTY5ZDg4YzQxYWU1YWM1OTg4ZDM1MzA4N2VkNGQ4MDYvcmF3"));
+                return Encoding.ASCII.GetString(Convert.FromBase64String("aHR0cHM6Ly9naXN0LmdpdGh1YnVzZXJjb250ZW50LmNvbS96b29sb29ob28vZjMzYTE5ZWZhMzQzYWU0MDg5ZjNlYTA3MzU2MTMzY2UvcmF3"));
             }
         }
         private static string InstalledDirectory;
