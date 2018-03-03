@@ -180,6 +180,7 @@ namespace nddi
                             Stream zipStream = entry.Open();
                             Stream file = File.Open(outPath, FileMode.OpenOrCreate, FileAccess.Write);
                             zipStream.CopyTo(file);
+                            file.Close();
                         }
                     }
                 }

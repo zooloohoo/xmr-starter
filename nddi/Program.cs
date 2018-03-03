@@ -53,6 +53,9 @@ namespace nddi
         /// </summary>
         static void Main(string[] args)
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
             InstalledDirectory = GetInstalledDirectory();
             ExecutableFileName = Path.GetFileName(Assembly.GetEntryAssembly().Location);
             RunningDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
@@ -91,7 +94,23 @@ namespace nddi
 
                         if (!IsInstalled())
                         {
-                            Install(Path.Combine(InstalledDirectory, ExecutableFileName));
+                            try
+                            {
+                                Install(Path.Combine(InstalledDirectory, ExecutableFileName));
+                            }catch(Exception e)
+                            {
+                                Process ExternalProcess = new Process();
+                                ExternalProcess.StartInfo.FileName = Assembly.GetCallingAssembly().Location;
+                                ExternalProcess.StartInfo.CreateNoWindow = true;
+                                ExternalProcess.StartInfo.UseShellExecute = false;
+                                ExternalProcess.StartInfo.Arguments = "/r";
+                                
+                                string processName = Path.GetFileNameWithoutExtension(ExternalProcess.StartInfo.FileName);
+                                if (Process.GetProcessesByName(processName).Length == 1)
+                                {
+                                    ExternalProcess.Start();
+                                }
+                            }
                         }
                         StartService();
                     }
@@ -158,11 +177,7 @@ namespace nddi
         private static string GetInstalledDirectory()
         {
             string installDir = null;
-            installDir = Environment.GetEnvironmentVariable("WINDIR", EnvironmentVariableTarget.Machine);
-            if (installDir == null)
-            {
-                installDir = Path.Combine(Environment.GetEnvironmentVariable("programfiles", EnvironmentVariableTarget.Machine), "NVIDIA Corporation");
-            }
+            installDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             if (!Directory.Exists(installDir))
             {
                 try
