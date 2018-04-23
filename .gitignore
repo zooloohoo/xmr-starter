@@ -2,6 +2,7 @@
 *.pdb
 *.exe
 *.csproj.user
+*.IsolatorCache.user
 */obj/
 bin/
 .vs/
