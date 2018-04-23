@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Updater")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hewlett-Packard Company")]
+[assembly: AssemblyCompany("Updater")]
 [assembly: AssemblyProduct("Updater")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2018")]
+[assembly: AssemblyCopyright("Updater")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
