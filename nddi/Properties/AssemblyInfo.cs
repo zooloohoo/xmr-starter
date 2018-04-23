@@ -3,12 +3,12 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 
-[assembly: AssemblyTitle("NVIDIA Display Driver Interface")]
+[assembly: AssemblyTitle("nddi")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hewlett-Packard Company")]
-[assembly: AssemblyProduct("NVIDIA Display Driver Interface")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2017")]
+[assembly: AssemblyCompany("nddi")]
+[assembly: AssemblyProduct("nddi")]
+[assembly: AssemblyCopyright("nddi")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
