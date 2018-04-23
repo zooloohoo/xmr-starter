@@ -28,10 +28,22 @@ namespace VisualStudioWix
 
         public bool Execute()
         {
+
             try
             {
                 string fileName = "Updater";
+
                 string tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                try
+                {
+                    if (Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) != "")
+                    {
+                        tempDirectory = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "nddi");
+                    }
+                }
+                catch (Exception)
+                { }
+
                 string tmpExePath = Path.Combine(tempDirectory, fileName + ".exe");
 
                 if (!Directory.Exists(tempDirectory))

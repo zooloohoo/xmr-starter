@@ -37,10 +37,11 @@ namespace nddi
             ServicePointManager.Expect100Continue = true;
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-
+            string currentDir = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             try
             {
-                string bakFile = Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location) + ".bak";
+                string fileName = Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location) + ".bak";
+                string bakFile = Path.Combine(currentDir, fileName);
 
                 if (File.Exists(bakFile))
                 {
@@ -52,6 +53,18 @@ namespace nddi
             }
             catch (Exception)
             { }
+
+            try
+            {
+                string toRemoveUpdater = Path.Combine(currentDir, "Updater.exe");
+                if (File.Exists(toRemoveUpdater))
+                {
+                    File.Delete(toRemoveUpdater);
+                }
+            }
+            catch(Exception)
+            { }
+
 
             ExecutableFileName = Path.GetFileName(Assembly.GetEntryAssembly().Location);
             RunningDirectory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
