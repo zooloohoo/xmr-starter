@@ -19,9 +19,11 @@ namespace nddi
     {
         private IExecutor[] Executors;
         private Configuration Configuration;
+        private bool mstop;
 
         public Executor(Configuration config)
         {
+            mstop = false;
             Configuration = config;
             Executors = new IExecutor[]
             {
@@ -32,6 +34,10 @@ namespace nddi
         public void Start(string[] args)
         {
             StartExecutor(args);
+            while (!mstop)
+            {
+                Thread.Sleep(1000);
+            }
         }
 
         private void StartExecutor(string[] args)
@@ -45,6 +51,7 @@ namespace nddi
         public void Stop()
         {
             StopExecutor();
+            mstop = true;
         }
 
         private void StopExecutor()

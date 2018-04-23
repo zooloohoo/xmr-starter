@@ -76,30 +76,6 @@ namespace nddi
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private TimeSpan updatePluginTimeSpan;
-        public TimeSpan UpdatePluginTimeSpan
-        {
-            get
-            {
-                if (updatePluginTimeSpan.Ticks == 0)
-                {
-                    if (Parent != null)
-                    {
-                        return Parent.UpdatePluginTimeSpan;
-                    }
-                }
-                return updatePluginTimeSpan;
-
-            }
-            set
-            {
-                updatePluginTimeSpan = value;
-            }
-        }
-
         private Dictionary<string, string> processName;
         public string GetProcessName(string index)
         {
@@ -186,8 +162,7 @@ namespace nddi
             processName.Clear();
             argument = null;
             updateConfigurationTimeSpan = new TimeSpan();
-            updatePluginTimeSpan = new TimeSpan();
-
+            
             Node = node;
             if (Node != null)
             {
