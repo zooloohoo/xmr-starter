@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("VisualStudioWix")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Hewlett-Packard Company")]
+[assembly: AssemblyCompany("VisualStudioWix")]
 [assembly: AssemblyProduct("VisualStudioWix")]
-[assembly: AssemblyCopyright("Copyright © Hewlett-Packard Company 2018")]
+[assembly: AssemblyCopyright("VisualStudioWix")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
